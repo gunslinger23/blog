@@ -3,7 +3,7 @@ stages:
   - deploy
 
 pages:
-  image: node:10-alpine
+  image: node:14-alpine
   cache:
     paths:
     - node_modules/
