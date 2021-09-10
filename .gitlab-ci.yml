@@ -11,7 +11,7 @@ pages:
   script:
   - npm install hexo-cli -g --registry=http://nexus3.nexus3:8081/repository/npm/
   - npm install --registry=http://nexus3.nexus3:8081/repository/npm/
-  - hexo deploy
+  - hexo generate
   artifacts:
     paths:
     - public
