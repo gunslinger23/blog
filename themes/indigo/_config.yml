@@ -115,10 +115,10 @@ gitalk:
   repo: blog-gitalk
   client_id: a58bd3d195be722a63dd
   client_secret: 086d15cf6ba78425d43933c2bae019f4c2955dad
-#  owner: 
-#  repo: 
-#  client_id: 
-#  client_secret: 
+#  owner:
+#  repo:
+#  client_id:
+#  client_secret:
 
 # Valine Comment system. https://valine.js.org
 valine:
@@ -163,4 +163,4 @@ cdn: false
 lightbox: true
 
 # icp备案号  ICP_license: 京ICP备1234556号-1
-ICP_license: 粤ICP备18124001号-1
+ICP_license: 粤ICP备18124001号
