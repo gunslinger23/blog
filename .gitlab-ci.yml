@@ -3,7 +3,7 @@ stages:
   - deploy
 
 pages:
-  image: registry.new-page.xyz/circleci/node:14-browsers
+  image: node:10-alpine
   cache:
     paths:
     - node_modules/
