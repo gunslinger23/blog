@@ -18,8 +18,6 @@ categories:
 
 近期重写的NCS（NewPage Core System）使用MonoRepo仓库+微服务。其中也遇到了许多坑，特别是国内特殊的网络环境，让本身用来加快仓库构建的工具变得不那么快🐌
 
----
-
 # 笔记
 
 ## GitLab CI 正确设置 Bazel 缓存目录
@@ -141,8 +139,6 @@ bazel run //path:push
 ```
 
 > 交叉编译需要添加编译目标平台参数`--platforms`，不同语言规则有不同的写法，这里就不一一叙述了。
-
----
 
 # 结尾
 
