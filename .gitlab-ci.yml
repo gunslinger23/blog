@@ -3,14 +3,12 @@ stages:
   - deploy
 
 pages:
-  image: node:14-alpine
-  cache:
-    paths:
-    - node_modules/
+  tags:
+    - windows
   stage: build
   script:
-  - npm install hexo-cli -g --registry=http://nexus3.nexus3:8081/repository/npm/
-  - npm install --registry=http://nexus3.nexus3:8081/repository/npm/
+  - npm install hexo-cli -g --registry=https://registry.npmmirror.com --disturl=https://npmmirror.com/mirrors/node --no-progress
+  - npm install --registry=https://registry.npmmirror.com --disturl=https://npmmirror.com/mirrors/node --no-progress --frozen-lockfile
   - hexo clean
   - hexo generate
   artifacts:
@@ -20,10 +18,11 @@ pages:
   - master
 
 deploy-upyun:
-  image: mwienk/docker-lftp:latest
+  tags:
+    - ftp
   stage: deploy
   script:
-    - lftp -c "set ftp:ssl-allow no;open -u $FTP_USERNAME,$FTP_PASSWORD -p $FTP_PORT $FTP_HOST;mirror -Rv public / --ignore-time --transfer-all --parallel=50 --exclude-glob .git* --exclude .git/" || true
+    - lftp -c "set sftp:connect-program 'ssh -oStrictHostKeyChecking=no';set sftp:auto-confirm yes;open -u $FTP_USERNAME,$FTP_PASSWORD -p $FTP_PORT $FTP_HOST;mirror -Rv public / --ignore-time --transfer-all --parallel=50 --exclude-glob .git* --exclude .git/" || true
   only:
     - master
   cache: {}
