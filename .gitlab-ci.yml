@@ -22,7 +22,7 @@ deploy-upyun:
     - ftp
   stage: deploy
   script:
-    - lftp -c "set sftp:connect-program 'ssh -oStrictHostKeyChecking=no';set sftp:auto-confirm yes;open -u $FTP_USERNAME,$FTP_PASSWORD -p $FTP_PORT $FTP_HOST;mirror -Rv public / --ignore-time --transfer-all --parallel=50 --exclude-glob .git* --exclude .git/ --no-perms" || true
+    - lftp -c "set ftp:charset 'utf-8';set file:charset 'utf-8';set sftp:connect-program 'ssh -oStrictHostKeyChecking=no';set sftp:auto-confirm yes;open -u $FTP_USERNAME,$FTP_PASSWORD -p $FTP_PORT $FTP_HOST;mirror -Rv public / --ignore-time --transfer-all --parallel=50 --exclude-glob .git* --exclude .git/ --no-perms" || true
   only:
     - master
   cache: {}
