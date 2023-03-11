@@ -3,6 +3,7 @@ title: 使用 acme.sh 自动签证书部署到腾讯云
 date: 2023-03-07 20:38:00
 tags:
   - SSL
+  - 云服务
 categories:
   - 运维
 ---

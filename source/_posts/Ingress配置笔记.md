@@ -3,6 +3,7 @@ title: Ingress配置笔记
 date: 2019-12-18 16:52:56
 tags:
   - Ingress
+  - Kubernetes
 categories:
   - 技术
 ---

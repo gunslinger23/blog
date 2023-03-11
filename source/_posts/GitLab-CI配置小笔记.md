@@ -3,6 +3,7 @@ title: GitLab CI配置小笔记
 date: 2020-04-02 16:18:31
 tags:
   - GitLab
+  - CI
 categories:
   - 技术
 ---

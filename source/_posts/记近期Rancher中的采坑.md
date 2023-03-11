@@ -4,6 +4,7 @@ date: 2019-10-19 20:30:33
 tags:
   - Rancher
   - Kubernetes
+  - Windows
 categories:
   - 技术
 ---
