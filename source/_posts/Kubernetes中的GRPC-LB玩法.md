@@ -9,7 +9,7 @@ categories:
   - 技术
 ---
 
-## 本文你讲看到（技术栈
+## 本文你将看到（技术栈
 
 - 集群界大哥 Kubernetes
 - 微服务 RPC 大哥 GRPC
