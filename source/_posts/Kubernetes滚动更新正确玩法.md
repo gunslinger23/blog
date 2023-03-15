@@ -51,21 +51,21 @@ categories:
 ```golang
 // Health Check
 func (s *Server) HealthCheck(health func() bool) {
-	s.healthFunc = health
-	mux := http.NewServeMux()
+    s.healthFunc = health
+    mux := http.NewServeMux()
     // Request path
-	mux.HandleFunc("/healthz", HttpHealthHandler(s.healthFunc))
-	s.healthCheck = &http.Server{
-		Addr:    "0.0.0.0:888", // Listen IP Port
-		Handler: mux,
-	}
-	// Http server
-	go func() {
-		err := s.healthCheck.ListenAndServe()
-		if err != nil && err != http.ErrServerClosed {
-			panic(err)
-		}
-	}()
+    mux.HandleFunc("/healthz", HttpHealthHandler(s.healthFunc))
+    s.healthCheck = &http.Server{
+        Addr:    "0.0.0.0:888", // Listen IP Port
+        Handler: mux,
+    }
+    // Http server
+    go func() {
+        err := s.healthCheck.ListenAndServe()
+        if err != nil && err != http.ErrServerClosed {
+            panic(err)
+        }
+    }()
 }
 
 // Real Service
@@ -165,9 +165,9 @@ retry := []grpc_retry.CallOption{
     grpc_retry.WithMax(3),
     grpc_retry.WithCodes([]codes.Code{
         codes.Canceled
-		codes.DataLoss,
-		codes.Unavailable,
-	}),
+        codes.DataLoss,
+        codes.Unavailable,
+    }),
 }
 opts := []grpc.DialOption{
     grpc.WithUnaryInterceptor(
