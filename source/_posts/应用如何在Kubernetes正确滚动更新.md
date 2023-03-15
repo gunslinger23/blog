@@ -20,7 +20,7 @@ categories:
 
 ![](https://d33wubrfki0l68.cloudfront.net/30f75140a581110443397192d70a4cdb37df7bfc/fa906/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates1.svg)
 
-服务A 在3个节点上运行，一共有4个副本，这时候我们需要更新服务A的副本
+服务A 在3个节点上运行，一共有4个副本，这时候我们需要更新 服务A 的副本
 
 ![](https://d33wubrfki0l68.cloudfront.net/678bcc3281bfcc588e87c73ffdc73c7a8380aca9/703a2/docs/tutorials/kubernetes-basics/public/images/module_06_rollingupdates2.svg)
 
@@ -99,6 +99,8 @@ containers:
 ```
 
 如果我们其他服务发现，我们则需要 Kubernetes 容器健康状态与服务发现状态保持一致
+
+> 如果不一致会出现 Consul 新服务未健康，而 Kubernetes 已认为新服务已健康，开始终结旧服务，进而导致无服务可用
 
 例如 Consul 我们仅需要将配置 `connectInject.enabled` 改成 `true` 即可
 
